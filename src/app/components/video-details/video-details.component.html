@@ -1,0 +1,45 @@
+<!-- Loader while data loaded -->
+<div class="spinner-container" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>
+
+<!-- Video details -->
+<div class="video-details-container">
+    <img *ngIf="videoDetails.thumbnails?.high" [src]="videoDetails.thumbnails.high.url" [alt]="videoDetails.title">
+  <div class="video-info">
+
+    <div class="video-header-wrapper">
+      <p>{{ videoDetails.title }}</p>
+      <button (click)="addToFavorite()">
+        <span *ngIf="favorite == 'false'">add to favorite</span>
+        <span *ngIf="favorite == 'true'">added to favorite</span>
+      </button>
+    </div>
+    <div class="info-container">
+
+      <div class="rating-container">
+        <p>Rate Now</p>
+        <div class="rate-wrapper">
+          <p-rating [(ngModel)]="ratingValue" (onRate)="handleRate($event)" [cancel]="false"></p-rating>
+        </div>
+      </div>
+
+      <div class="duration-container">
+        <p>Duration <span>N/N</span></p>
+      </div>
+
+      <div class="likes-views-container">
+        <p>
+          <i class="fa fa-eye" aria-hidden="true"></i>
+          <span>N/N</span>
+        </p>
+        <p>
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+          <span>N/N</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <p class="published-date">Published On {{videoDetails.publishedAt | date: 'dd-mm-yyyy'}}</p>
+  <p class="description">{{ videoDetails.description }}</p>
+</div>

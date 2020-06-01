@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+   margin: 0;
+   font-family: Roboto, "Helvetica Neue", sans-serif;
+
+   .video-details-container {
+     .ui-rating {
+       a {
+         color: #d53f3f;
+   
+         &:focus {
+           box-shadow: none;
+         }
+   
+         &:hover {
+           color: #d53f3f;
+         }
+       }
+     }
+
+     .ui-rating:not(.ui-state-disabled):not(.ui-rating-readonly) a:focus {
+       box-shadow: none;
+     }
+     .ui-rating:not(.ui-state-disabled):not(.ui-rating-readonly) a:hover {
+      color: #ff5555;
+     }
+ 
+   }
+
+   .spinner-container {
+    width: 100%;
+    height: 200px;
+  
+    mat-spinner {
+      margin: 0 auto;
+      margin-top: 100px;
+    }
+  }
+ }
